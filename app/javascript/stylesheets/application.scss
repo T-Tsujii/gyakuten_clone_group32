@@ -15,6 +15,14 @@
   @extend .alert-danger;
 }
 
+// ↓ログイン周りの設定
+.login-container {
+  max-width: 576px;
+  margin: 0 auto;
+  padding-top: 152px;
+}
+// ↑ログイン周りの設定
+
 body {
   padding-top: 56px;
 }
