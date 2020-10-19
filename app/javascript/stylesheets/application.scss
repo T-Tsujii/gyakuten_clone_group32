@@ -31,3 +31,36 @@
   background-color: #17a2b8;
   border-color: #17a2b8;
 }
+
+body {
+  padding-top: 56px;
+}
+
+.base-color {
+  background-color: #5D99FF;
+}
+
+.navbar {
+  font-size: 0.8rem;
+  margin: 0 auto;
+  width: var(--breakpoint-lg);
+}
+
+.nav-link {
+  display: block;
+}
+
+.dropdown-toggle {
+  white-space: nowrap;
+}
+
+.navbar-expand-lg {
+  flex-flow: row nowrap;
+  justify-content: flex-start;
+}
+
+.navbar-expand-lg .navbar-collapse {
+  justify-content: flex-end;
+  display: flex !important;
+  flex-basis: auto;
+}
