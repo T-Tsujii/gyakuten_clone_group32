@@ -58,7 +58,7 @@ body {
   flex-basis: auto;
 }
 
-// AWSテキスト関連
+// AWSテキスト関連（タスク16で追加）
 .w-1 {
   width: 10%;
 }
@@ -66,21 +66,6 @@ body {
 .w-5 {
   width: 50%;
 }
-
-// AWS関連ここまで
-/*
-@media (min-width: 992px) {
-  h2 {
-  font-size: 30px;
-  padding: 20px 0 10px 0;
-}
-
-  p {
-  font-size: 17px;
-  line-height: 1.9em;
-  }
-}
-*/
 
 h2 {
   padding: 40px 0 10px 0;
@@ -91,4 +76,32 @@ p {
   font-size: 2.2em;
   line-height: 1.9em;
   margin-bottom: 1rem;
+  padding-bottom: 15px;
 }
+
+.table-container {
+  font-size: 1.5em;
+  width: 710px;
+  margin: 0 auto;
+}
+
+@media (min-width: 992px) {
+  h2 {
+  font-size: 30px;
+  padding: 20px 0 10px 0;
+}
+
+  p {
+  font-size: 17px;
+  line-height: 1.9em;
+  width: 710px;
+  margin: 0 auto;
+  }
+
+  .table-container {
+    font-size: 17px;
+  }
+}
+// AWS関連（タスク16で追加）ここまで
+
+
