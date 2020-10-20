@@ -6,4 +6,9 @@ namespace :import_csv do
     list = Import.csv_data(path: "db/csv_data/aws_text_data.csv")
     AwsText.create!(list)
   end
+
+  task movies: :environment do
+    list = Import.csv_data(path: "db/csv_data/movie_data.csv")
+    Movie.create!(list)
+  end
 end
