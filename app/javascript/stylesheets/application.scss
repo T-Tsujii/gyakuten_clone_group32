@@ -67,39 +67,43 @@ body {
   width: 50%;
 }
 
-h2 {
-  padding: 40px 0 10px 0;
-  font-size: 3em;
-}
-
-p {
-  font-size: 2.2em;
-  line-height: 1.9em;
-  margin-bottom: 1rem;
-  padding-bottom: 15px;
-}
-
-.table-container {
-  font-size: 1.5em;
-  width: 710px;
-  margin: 0 auto;
-}
-
-@media (min-width: 992px) {
+.container-lg {
   h2 {
-  font-size: 30px;
-  padding: 20px 0 10px 0;
-}
+    padding: 40px 0 10px 0;
+    font-size: 3em;
+  }
 
   p {
-  font-size: 17px;
-  line-height: 1.9em;
-  width: 710px;
-  margin: 0 auto;
+    font-size: 2.2em;
+    line-height: 1.9em;
+    margin-bottom: 1rem;
+    padding-bottom: 15px;
   }
 
   .table-container {
+    font-size: 1.5em;
+    width: 710px;
+    margin: 0 auto;
+  }
+}
+
+@media (min-width: 992px) {
+  .container-lg {
+    h2 {
+    font-size: 30px;
+    padding: 20px 0 10px 0;
+    }
+
+    p {
     font-size: 17px;
+    line-height: 1.9em;
+    width: 710px;
+    margin: 0 auto;
+    }
+
+    .table-container {
+      font-size: 17px;
+    }
   }
 }
 // AWS関連（タスク16で追加）ここまで
