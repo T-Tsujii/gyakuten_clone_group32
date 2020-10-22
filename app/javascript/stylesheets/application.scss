@@ -17,13 +17,13 @@
   @extend .alert-danger;
 }
 
-// ↓ログイン周りの設定
+// ログイン周りの設定（開始）
 .login-container {
   max-width: 576px;
   margin: 0 auto;
   padding-top: 152px;
 }
-// ↑ログイン周りの設定
+// ↑ログイン周りの設定（終了）
 
 body {
   padding-top: 56px;
@@ -109,3 +109,11 @@ body {
 // AWS関連（タスク16で追加）ここまで
 
 
+// AWSテキスト教材の詳細ページ（開始）
+.aws_detail_container {
+  max-width: 700px;
+  font-size: 17px;
+  margin: 0 auto;
+  line-height: 1.9em;
+}
+// AWSテキスト教材の詳細ページ（終了）

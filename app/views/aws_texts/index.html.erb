@@ -12,7 +12,7 @@
       <tbody>
         <% @aws_texts.each do |aws_text| %>
           <tr>
-            <td><%= aws_text.id %></td> <td><%= aws_text.title %></td>
+            <td><%= aws_text.id %></td> <td><%= link_to aws_text.title, aws_text_path(aws_text.id) %></td>
           </tr>
         <% end %>
       </tbody>
