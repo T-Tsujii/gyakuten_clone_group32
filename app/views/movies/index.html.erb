@@ -1,5 +1,11 @@
-<% @movies.each do |movie| %>
-  <%= movie.title %>
-  <%= movie.url %>
-  <br>
+
+<% @movies.each.with_index(1) do |movie, i| %>
+  <div class="card" style="width: 18rem;">
+    <iframe width="560" height="315" src="<%= movie.url %>" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+    </iframe>
+    <div class="card-body">
+      <h5 class="card-title">Lv.<%= i %>:<%= movie.title %></h5>
+      <a href="#" class="btn btn-primary"></a>
+    </div>
+  </div>
 <% end %>
