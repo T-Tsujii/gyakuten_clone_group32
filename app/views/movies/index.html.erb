@@ -1,14 +1,21 @@
-<div class = "container" >
-  <div class = "d-flex justify-content-center" >
-    <% @movies.each.with_index(1) do |movie, i| %>
-      <div class="card" style="width: 18rem;">
-        <iframe width="560" height="315" src="<%= movie.url %>" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
-        </iframe>
-        <div class="card-body">
-          <h5 class="card-title">Lv.<%= i %>:<%= movie.title %></h5>
-          <a href="#" class="btn btn-primary"></a>
+<div class = "container" width="90%" style="padding: 50px 0px 160px 0px;">
+  <div class = "container-fluid" >
+    <div class = "row">
+      <% @movies.each.with_index(1) do |movie, i| %>
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class = "card border-dark mb-3">
+            <div class = "card-header p-0">
+              <div class="embed-responsive embed-responsive-16by9">
+                <iframe width=560 height=315 src="<%= movie.url %>" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+                </iframe>
+              </div>
+            </div>
+            <div class="card-body text-dark movie-body" style= "height: 290px;">
+              <p class="card-title" style="height:200px; font-size:1.7rem; line-hight:1.5em;">Lv.<%= i %>:<%= movie.title %></p>
+            </div>
+          </div>
         </div>
-      </div>
-    <% end %>
+      <% end %>
+    </div>
   </div>
 </div>
