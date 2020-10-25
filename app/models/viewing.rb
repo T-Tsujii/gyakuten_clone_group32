@@ -1,5 +1,8 @@
 class Viewing < ApplicationRecord
   belongs_to :user
   belongs_to :movie
-  validates :user_id, uniqueness: {scope: :view_id}
+  validates :user_id, uniqueness: {
+  scope: :movie_id,
+  message: "は"
+  }
 end
