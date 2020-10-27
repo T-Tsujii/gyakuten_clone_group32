@@ -1,7 +1,7 @@
 <div class = "container" width="90%" style="padding: 50px 0px 160px 0px;">
   <div class = "container-fluid" >
     <div class = "row">
-      <% @movies.each.with_index(1) do |movie, i| %>
+      <% @movies.each.with_index(@movies.offset_value + 1) do |movie, i| %>
         <div class="col-12 col-md-6 col-lg-4">
           <div class = "card border-dark mb-3">
             <div class = "card-header p-0">
@@ -24,5 +24,6 @@
         </div>
       <% end %>
     </div>
+    <%= paginate @movies %>
   </div>
 </div>
