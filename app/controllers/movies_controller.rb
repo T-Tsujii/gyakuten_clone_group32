@@ -4,7 +4,7 @@ class MoviesController < ApplicationController
   PER_PAGE = 18
 
   def index
-    @movies = Movie.all.page(params[:page]).per(PER_PAGE)
+    @movies = Movie.order(id: :asc).page(params[:page]).per(PER_PAGE)
     @viewed_movie_ids = current_user.viewings.pluck(:movie_id)
   end
 end
