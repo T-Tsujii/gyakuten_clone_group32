@@ -2,7 +2,8 @@ class MypagesController < ApplicationController
 
   def progress
     @viewings = Viewing.count
-    @moives = Movie.count
+    @movies = Movie.count
+    @percentage = @viewings * 100 / @movies
   end
 
 end
