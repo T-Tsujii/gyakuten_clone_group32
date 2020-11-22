@@ -1,4 +1,10 @@
-<h1>進捗管理</h1>
-<p><%= @viewings %></p>
-<p><%= @movies %></p>
-<p><%= @percentage.round %>％</p>
+<div class="progress-container">
+  <h1>進捗管理</h1>
+  <h2>動画教材 視聴済み</h2>
+  <p><%= "(#{@viewings} / #{@movies})" %></p>
+  <div class="progress-graph">
+    <div class="progress-graph progress-stripe-graph" style="width: 10%;">
+      <%= @percentage.round %>％
+    </div>
+  </div>
+</div>
