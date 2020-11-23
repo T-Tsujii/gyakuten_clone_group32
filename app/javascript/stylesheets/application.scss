@@ -131,6 +131,9 @@ ul.pagination {
   h1 {
     text-align: center;
   }
+  p {
+    margin-top: 24px;
+  }
   .progress-graph {
     width : 100%;
     padding-top : 30px;
@@ -138,7 +141,6 @@ ul.pagination {
     border-radius: 5px;
     position: relative;
     .progress-stripe-graph {
-      background-color: blue;
       text-align: center;
       color: white;
       padding-top: 0%;
@@ -146,6 +148,18 @@ ul.pagination {
       position: absolute;
       top: 0px;
       left: 0px;
+    }
+    .basic {
+      background-color: blue;
+    }
+    .git {
+      background-color: black;
+    }
+    .ruby {
+      background-color: red;
+    }
+    .rails {
+      background-color: pink;
     }
   }
 }
