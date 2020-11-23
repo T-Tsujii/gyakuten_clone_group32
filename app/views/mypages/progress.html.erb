@@ -3,7 +3,7 @@
   <h2>動画教材 視聴済み</h2>
   <p><%= "(#{@viewings} / #{@movies})" %></p>
   <div class="progress-graph">
-    <div class="progress-graph progress-stripe-graph" style="width: 10%;">
+    <div class="progress-graph progress-stripe-graph" style="width: <%= @percentage.round %>%;">
       <%= @percentage.round %>％
     </div>
   </div>
