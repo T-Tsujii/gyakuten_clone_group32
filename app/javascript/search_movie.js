@@ -1,4 +1,5 @@
-$(function () {
+$(document).on('turbolinks:load',
+function () {
   searchWord = function () {
     var searchText = $(this).val().toLowerCase(), // 検索ボックスに入力された文字列（大文字小文字の区別をなくすために小文字に変換
         targetText;
