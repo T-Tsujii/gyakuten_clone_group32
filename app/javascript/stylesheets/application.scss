@@ -123,3 +123,24 @@ ul.pagination {
   font-size: 2em;
   justify-content: center;
 }
+
+// 動画教材の検索フォーム関連
+form.search-form {
+  position: relative;
+  width: 350px;
+}
+
+form.search-form i {
+  position: absolute;
+  top: 30%;
+  left: 5%;
+}
+
+input.search-movie {
+  height: 50px;
+  padding-left: 50px;
+}
+
+.hidden {
+  display: none;
+}
