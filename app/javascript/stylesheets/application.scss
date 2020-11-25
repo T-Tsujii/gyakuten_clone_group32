@@ -149,3 +149,17 @@ input.search-movie {
 .g-calendar {
   text-align: center;
 }
+
+// Googleカレンダー（スマホ表示）
+.g-calendar iframe {
+  width:100%;
+  max-width:800px;
+  height:400px;
+  }
+
+  // Googleカレンダー（PC表示）
+  @media (min-width: 960px) {
+    .g-calendar iframe {
+    height:600px;
+    }
+  }
