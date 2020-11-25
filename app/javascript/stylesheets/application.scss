@@ -164,3 +164,42 @@ ul.pagination {
   }
 }
 //マイページここまで
+// 動画教材の検索フォーム関連
+form.search-form {
+  position: relative;
+  width: 350px;
+}
+
+form.search-form i {
+  position: absolute;
+  top: 30%;
+  left: 5%;
+}
+
+input.search-movie {
+  height: 50px;
+  padding-left: 50px;
+}
+
+.hidden {
+  display: none;
+}
+
+// カレンダーフォーム関連
+.g-calendar {
+  text-align: center;
+}
+
+// Googleカレンダー（スマホ表示）
+.g-calendar iframe {
+  width:100%;
+  max-width:800px;
+  height:400px;
+  }
+
+  // Googleカレンダー（PC表示）
+  @media (min-width: 960px) {
+    .g-calendar iframe {
+    height:600px;
+    }
+  }
