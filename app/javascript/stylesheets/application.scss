@@ -150,16 +150,16 @@ ul.pagination {
       left: 0px;
     }
     .basic {
-      background-color: blue;
+      background: repeating-linear-gradient(45deg, #136FFF, #136FFF 5px, #4689FF 5px, #4689FF 10px);
     }
     .git {
-      background-color: black;
+      background: repeating-linear-gradient(45deg, #333333, #333333 5px, #555555 5px, #555555 10px);
     }
     .ruby {
-      background-color: red;
+      background: repeating-linear-gradient(45deg, #FF1A6F, #FF1A6F 5px, #FF5192 5px, #FF5192 10px);
     }
     .rails {
-      background-color: pink;
+      background: repeating-linear-gradient(45deg, #FF1A6F, #FF1A6F 5px, #FF5192 5px, #FF5192 10px);
     }
   }
 }
