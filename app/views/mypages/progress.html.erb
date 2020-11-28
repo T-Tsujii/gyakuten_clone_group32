@@ -1,32 +1,14 @@
 <div class="progress-container">
   <h1>進捗管理</h1>
   <h2>動画教材 視聴済み</h2>
-  <p>Basic <%= "(#{@basic_viewings} / #{@basic_movies})" %></p>
-  <div class="progress-graph">
-    <div class="progress-graph progress-stripe-graph basic" style="width: <%= @basic_percentage.round %>%;">
-      <%= @basic_percentage.round %>％
-    </div>
-  </div>
 
-  <p>Git <%= "(#{@git_viewings} / #{@git_movies})" %></p>
+  <% @progress.each do |progress| %>
+  <p><%= "#{progress[:genre]} (#{progress[:current]} / #{progress[:total]})" %></p>
   <div class="progress-graph">
-    <div class="progress-graph progress-stripe-graph git" style="width: <%= @git_percentage.round %>%;">
-      <%= @git_percentage.round %>％
+    <div class="progress-graph progress-stripe-graph <%= progress[:genre] %>" style="width: <%= progress[:percentage] %>%;">
+      <%= progress[:percentage].round %>％
     </div>
   </div>
-
-  <p>Ruby <%= "(#{@ruby_viewings} / #{@ruby_movies})" %></p>
-  <div class="progress-graph">
-    <div class="progress-graph progress-stripe-graph ruby" style="width: <%= @ruby_percentage.round %>%;">
-      <%= @ruby_percentage.round %>％
-    </div>
-  </div>
-
-  <p>Ruby on Rails <%= "(#{@rails_viewings} / #{@rails_movies})" %></p>
-  <div class="progress-graph">
-    <div class="progress-graph progress-stripe-graph rails" style="width: <%= @rails_percentage.round %>%;">
-      <%= @rails_percentage.round %>％
-    </div>
-  </div>
+  <% end %>
 
 </div>

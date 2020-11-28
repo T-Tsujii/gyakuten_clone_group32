@@ -1,23 +1,51 @@
 class MypagesController < ApplicationController
 
-  def progress
-    basic = 1..7
-    git = 8..10
-    ruby = 11..17
-    rails = 18..31
+  class Genre
+    attr_accessor :viewing, :movies, :percentage
+    def initialize(genre_id)
+      @viewing = Viewing.where(movie_id: genre_id).count
+      @movies = genre_id.count
+      @percentage = viewing * 100 / movies
+    end
+  end
 
-    @basic_viewings = Viewing.where(movie_id: basic).count
-    @basic_movies = Movie.where(id: basic).count
-    @basic_percentage = @basic_viewings * 100 / @basic_movies
-    @git_viewings = Viewing.where(movie_id: git).count
-    @git_movies = Movie.where(id: git).count
-    @git_percentage = @git_viewings * 100 / @git_movies
-    @ruby_viewings = Viewing.where(movie_id: ruby).count
-    @ruby_movies = Movie.where(id: ruby).count
-    @ruby_percentage = @ruby_viewings * 100 / @ruby_movies
-    @rails_viewings = Viewing.where(movie_id: rails).count
-    @rails_movies = Movie.where(id: rails).count
-    @rails_percentage = @rails_viewings * 100 / @rails_movies
+  def progress
+    basic_ids = Movie.where(genre: "Basic").order(id: :asc).ids
+    git_ids = Movie.where(genre: "Git").order(id: :asc).ids
+    ruby_ids = Movie.where(genre: "Ruby").order(id: :asc).ids
+    rails_ids = Movie.where(genre: "Ruby on Rails").order(id: :asc).ids
+
+    basic = Genre.new(basic_ids)
+    git = Genre.new(git_ids)
+    ruby = Genre.new(ruby_ids)
+    rails = Genre.new(rails_ids)
+
+    @progress = [
+      {
+        genre: "Basic",
+        total: basic.movies,
+        current: basic.viewing,
+        percentage: basic.percentage
+      },
+      {
+        genre: "Git",
+        total: git.movies,
+        current: git.viewing,
+        percentage: git.percentage
+      },
+      {
+        genre: "Ruby",
+        total: ruby.movies,
+        current: ruby.viewing,
+        percentage: ruby.percentage
+      },
+      {
+        genre: "Ruby on Rails",
+        total: rails.movies,
+        current: rails.viewing,
+        percentage: rails.percentage
+      }
+    ]
   end
 
 end
