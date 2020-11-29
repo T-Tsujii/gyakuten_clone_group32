@@ -1,11 +1,12 @@
 class MypagesController < ApplicationController
 
   class Genre
-    attr_accessor :viewing, :movies, :percentage
-    def initialize(genre_id)
-      @viewing = Viewing.where(movie_id: genre_id).count
-      @movies = genre_id.count
-      @percentage = viewing * 100 / movies
+    attr_accessor :viewing, :total, :percentage, :genre
+    def initialize(genre_ids, genre)
+      @viewing = Viewing.where(movie_id: genre_ids).count
+      @total = genre_ids.count
+      @percentage = @total != 0 ? @viewing * 100 / @total : 0
+      @genre = genre
     end
   end
 
@@ -15,37 +16,20 @@ class MypagesController < ApplicationController
     ruby_ids = Movie.where(genre: "Ruby").order(id: :asc).ids
     rails_ids = Movie.where(genre: "Ruby on Rails").order(id: :asc).ids
 
-    basic = Genre.new(basic_ids)
-    git = Genre.new(git_ids)
-    ruby = Genre.new(ruby_ids)
-    rails = Genre.new(rails_ids)
-
-    @progress = [
-      {
-        genre: "Basic",
-        total: basic.movies,
-        current: basic.viewing,
-        percentage: basic.percentage
-      },
-      {
-        genre: "Git",
-        total: git.movies,
-        current: git.viewing,
-        percentage: git.percentage
-      },
-      {
-        genre: "Ruby",
-        total: ruby.movies,
-        current: ruby.viewing,
-        percentage: ruby.percentage
-      },
-      {
-        genre: "Ruby on Rails",
-        total: rails.movies,
-        current: rails.viewing,
-        percentage: rails.percentage
-      }
+    genres = [
+      Genre.new(basic_ids, "Basic"),
+      Genre.new(git_ids, "Git"),
+      Genre.new(ruby_ids, "Ruby"),
+      Genre.new(rails_ids, "Ruby on Rails")
     ]
-  end
 
+    @progress = genres.map do |genre|
+      {
+        genre: genre.genre,
+        total: genre.total,
+        current: genre.viewing,
+        percentage: genre.percentage
+      }
+    end
+  end
 end
