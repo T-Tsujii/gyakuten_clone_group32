@@ -1,0 +1,14 @@
+<div class="progress-container">
+  <h1>進捗管理</h1>
+  <h2>動画教材 視聴済み</h2>
+
+  <% @progress.each do |progress| %>
+  <p><%= "#{progress[:genre]} (#{progress[:current]} / #{progress[:total]})" %></p>
+  <div class="progress-graph">
+    <div class="progress-graph progress-stripe-graph <%= progress[:genre] %>" style="width: <%= progress[:percentage] %>%;">
+      <%= progress[:percentage].round %>％
+    </div>
+  </div>
+  <% end %>
+
+</div>

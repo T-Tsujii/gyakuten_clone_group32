@@ -124,6 +124,46 @@ ul.pagination {
   justify-content: center;
 }
 
+//マイページ
+.progress-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  h1 {
+    text-align: center;
+  }
+  p {
+    margin-top: 24px;
+  }
+  .progress-graph {
+    width : 100%;
+    padding-top : 30px;
+    background-color: #dddddd;
+    border-radius: 5px;
+    position: relative;
+    .progress-stripe-graph {
+      text-align: center;
+      color: white;
+      padding-top: 0%;
+      height: 30px;
+      position: absolute;
+      top: 0px;
+      left: 0px;
+    }
+    .Basic {
+      background: repeating-linear-gradient(45deg, #136FFF, #136FFF 5px, #4689FF 5px, #4689FF 10px);
+    }
+    .Git {
+      background: repeating-linear-gradient(45deg, #333333, #333333 5px, #555555 5px, #555555 10px);
+    }
+    .Ruby {
+      background: repeating-linear-gradient(45deg, #FF1A6F, #FF1A6F 5px, #FF5192 5px, #FF5192 10px);
+    }
+    .Rails {
+      background: repeating-linear-gradient(45deg, #FF1A6F, #FF1A6F 5px, #FF5192 5px, #FF5192 10px);
+    }
+  }
+}
+//マイページここまで
 // 動画教材の検索フォーム関連
 form.search-form {
   position: relative;

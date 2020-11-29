@@ -7,4 +7,5 @@ Rails.application.routes.draw do
     resource :viewings, only: [:create, :destroy]
   end  
   resources :aws_texts
+  get '/my_pages', to: 'mypages#progress'  
 end
